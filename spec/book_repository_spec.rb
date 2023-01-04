@@ -17,4 +17,9 @@ describe BookRepository do
   it "#all returns array of all books" do
     expect(@repo.all).to eq [@book1, @book2]
   end
+
+  it "#delete removes student from database" do
+    @repo.delete(@book1)
+    expect(@repo.all).to eq [@book2]
+  end
 end
