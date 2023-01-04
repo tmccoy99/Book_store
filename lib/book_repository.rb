@@ -16,8 +16,9 @@ class BookRepository
 
   end
 
-  def delete
-
+  def delete(book)
+    query = "DELETE FROM books WHERE id = #{book.id}"
+    DatabaseConnection.exec_params(query, [])
   end
 
 end
