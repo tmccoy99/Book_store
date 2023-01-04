@@ -22,4 +22,10 @@ describe BookRepository do
     @repo.delete(@book1)
     expect(@repo.all).to eq [@book2]
   end
+
+  it "#update can change the data at a given id" do
+    @book1.title = "Nineteen Eighty-Three"
+    @repo.update(1, @book1)
+    expect(@repo.all).to eq [@book1, @book2]
+  end
 end
