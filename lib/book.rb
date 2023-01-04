@@ -3,4 +3,6 @@ class Book
 
   def initialize(id = nil, title = nil, author_name = nil)
     @id = id ; @title = title ; @author_name = author_name
+  end
+  
 end
