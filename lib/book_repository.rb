@@ -12,8 +12,12 @@ class BookRepository
     books
   end
 
-  def update
-
+  def update(id_to_update, book)
+    query = "UPDATE books SET title = '#{book.title}', " \
+    "author_name = '#{book.author_name}' " \
+    "WHERE id = #{id_to_update}"
+    
+    DatabaseConnection.exec_params(query, [])
   end
 
   def delete(book)
